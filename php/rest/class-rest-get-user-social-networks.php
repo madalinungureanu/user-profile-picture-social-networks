@@ -54,11 +54,11 @@ class Rest_Get_User_Social_Networks {
 
 		if ( ! $user_id ) {
 			if ( ! isset( $request['post_id'] ) ) {
-				return new \WP_Error( 'mpp_invalid_params', __( 'You must pass a user_id or post_id to retrieve an Avatar.', 'user-profile-picture-enhanced' ), array( 'status' => 403 ) );
+				return new \WP_Error( 'mpp_invalid_params', __( 'You must pass a user_id or post_id to retrieve an Avatar.', 'user-profile-picture-social-networks' ), array( 'status' => 403 ) );
 			} else {
 				$post = get_post( $request['post_id'] );
 				if ( ! $post ) {
-					return new \WP_Error( 'mpp_invalid_post_id', __( 'Could not find a post for that post id.', 'user-profile-picture-enhanced' ), array( 'status' => 403 ) );
+					return new \WP_Error( 'mpp_invalid_post_id', __( 'Could not find a post for that post id.', 'user-profile-picture-social-networks' ), array( 'status' => 403 ) );
 				}
 				$user_id = absint( $post->post_author );
 			}
@@ -67,7 +67,7 @@ class Rest_Get_User_Social_Networks {
 		// Get profile data.
 		$profile_post_id = absint( get_user_option( 'metronet_post_id', $user_id ) );
 		if ( 0 === $profile_post_id || 'mt_pp' !== get_post_type( $profile_post_id ) ) {
-			return new \WP_Error( 'mpp_no_user', __( 'User not found.', 'user-profile-picture-enhanced' ), array( 'status' => 403 ) );
+			return new \WP_Error( 'mpp_no_user', __( 'User not found.', 'user-profile-picture-social-networks' ), array( 'status' => 403 ) );
 		}
 
 		// Get social networks for user.
@@ -76,7 +76,7 @@ class Rest_Get_User_Social_Networks {
 		$results = $wpdb->get_results( $wpdb->prepare( "select * from {$tablename} where user_id = %d ORDER BY item_order ASC", $user_id ) ); // phpcs:ignore
 
 		if ( ! $results ) {
-			return new \WP_Error( 'mpp_no_social_networks', __( 'No social networks found for this user.', 'user-profile-picture-enhanced' ), array( 'status' => 403 ) );
+			return new \WP_Error( 'mpp_no_social_networks', __( 'No social networks found for this user.', 'user-profile-picture-social-networks' ), array( 'status' => 403 ) );
 		}
 
 		$return = array( 'items' => array() );

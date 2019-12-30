@@ -16,13 +16,13 @@ import edit from './edit';
  *                             registered; otherwise `undefined`.
  */
 registerBlockType( 'mpp/user-profile-picture-enhanced-social-networks', {
-	title: __( 'User Profile Social Networks', 'user-profile-picture-enhanced' ), // Block title.
+	title: __( 'User Profile Social Networks', 'user-profile-picture-social-networks' ), // Block title.
 	icon: 'share-alt2',
 	category: 'mpp',
 	keywords: [
-		__( 'profile', 'user-profile-picture-enhanced' ),
-		__( 'social', 'user-profile-picture-enhanced' ),
-		__( 'network', 'user-profile-picture-enhanced' ),
+		__( 'profile', 'user-profile-picture-social-networks' ),
+		__( 'social', 'user-profile-picture-social-networks' ),
+		__( 'network', 'user-profile-picture-social-networks' ),
 	],
 	supports: {
 		align: true

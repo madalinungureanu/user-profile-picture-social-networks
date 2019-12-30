@@ -175,7 +175,7 @@ class Social_Networks {
 	 * @return string HTML.
 	 */
 	private function get_profile_html( $profile_id, $order, $icon, $url ) {
-		$html = '<li><div class="user-profile-enhanced-social-item" data-id="' . absint( $profile_id ) . '" data-order="' . absint( $order ) . '" data-icon="' . esc_attr( $icon ) . '"><i class="' . esc_attr( $icon ) . '"></i> <input class="user-profile-enhanced-url regular-text" type="text" value="' . esc_attr( $url ) . '" placeholder="https://" /> <a class="user-profile-enhanced-social-item-save button button-secondary" href="#" class="button button-secondary">' . esc_html__( 'Save', 'user-profile-picture-enhanced' ) . '</a> <a class="user-profile-enhanced-social-item-remove button button-secondary button-link-delete" href="#" class="button button-secondary">' . esc_html__( 'Remove', 'user-profile-picture-enhanced' ) . '</a></div></li>';
+		$html = '<li><div class="user-profile-enhanced-social-item" data-id="' . absint( $profile_id ) . '" data-order="' . absint( $order ) . '" data-icon="' . esc_attr( $icon ) . '"><i class="' . esc_attr( $icon ) . '"></i> <input class="user-profile-enhanced-url regular-text" type="text" value="' . esc_attr( $url ) . '" placeholder="https://" /> <a class="user-profile-enhanced-social-item-save button button-secondary" href="#" class="button button-secondary">' . esc_html__( 'Save', 'user-profile-picture-social-networks' ) . '</a> <a class="user-profile-enhanced-social-item-remove button button-secondary button-link-delete" href="#" class="button button-secondary">' . esc_html__( 'Remove', 'user-profile-picture-social-networks' ) . '</a></div></li>';
 		return $html;
 	}
 
@@ -232,11 +232,11 @@ class Social_Networks {
 			'upp-enhanced-social',
 			'upp_enhanced',
 			array(
-				'remove'      => __( 'Remove', 'user-profile-picture-enhanced' ),
-				'removing'    => __( 'Removing...', 'user-profile-picture-enhanced' ),
-				'saved'       => __( 'Saved', 'user-profile-picture-enhanced' ),
-				'save'        => __( 'Save', 'user-profile-picture-enhanced' ),
-				'saving'      => __( 'Saving...', 'user-profile-picture-enhanced' ),
+				'remove'      => __( 'Remove', 'user-profile-picture-social-networks' ),
+				'removing'    => __( 'Removing...', 'user-profile-picture-social-networks' ),
+				'saved'       => __( 'Saved', 'user-profile-picture-social-networks' ),
+				'save'        => __( 'Save', 'user-profile-picture-social-networks' ),
+				'saving'      => __( 'Saving...', 'user-profile-picture-social-networks' ),
 				'placeholder' => 'https://',
 			)
 		);
@@ -251,7 +251,7 @@ class Social_Networks {
 		}
 		?>
 		<tr valign="top">
-			<th scope="row"><?php esc_html_e( 'Social Networks', 'user-profile-picture-enhanced' ); ?></th>
+			<th scope="row"><?php esc_html_e( 'Social Networks', 'user-profile-picture-social-networks' ); ?></th>
 			<td id="user-profile-picture-enhanced-social-networks">
 				<?php
 				wp_nonce_field( 'add-social-networks', 'upp_add_social_network' );
@@ -269,7 +269,7 @@ class Social_Networks {
 					}
 					?>
 				</select>
-				<a href="#" id="user-profile-enhanced-social-add" class="button button-secondary"><?php esc_html_e( 'Add Social Network', 'user-profile-picture-enhanced' ); ?></a>
+				<a href="#" id="user-profile-enhanced-social-add" class="button button-secondary"><?php esc_html_e( 'Add Social Network', 'user-profile-picture-social-networks' ); ?></a>
 				<div id="user-profile-enhanced-spinner" style="display: none;"><?php printf( '<img class="mpp-loading" width="40" height="40" alt="Loading" src="%s" />', esc_url( $mt_pp::get_plugin_url( '/img/loading.gif' ) ) ); ?></div>
 				<div>
 					<ul id="user-profile-picture-enhanced-sortable">
@@ -412,6 +412,16 @@ class Social_Networks {
 				'fa'    => 'fab fa-youtube',
 			),
 		);
+		/**
+		 * Add or substract social networks.
+		 *
+		 * Override (add/substract) social networks using this filter.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $social_networks Array of social networks.
+		 */
+		$social_networks = apply_filters( 'user_profile_picture_social_networks', $social_networks );
 		return $social_networks;
 	}
 

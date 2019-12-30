@@ -31,7 +31,7 @@ gulp.task( 'wporg:prepare', function() {
 
 gulp.task( 'release:copy-for-zip', function() {
 	return gulp.src('release/user-profile-picture-enhanced/**')
-		.pipe(gulp.dest('user-profile-picture-enhanced'));
+		.pipe(gulp.dest('user-profile-picture-social-networks'));
 } );
 
 gulp.task( 'release:zip', function() {
@@ -43,7 +43,7 @@ gulp.task( 'release:zip', function() {
 gulp.task( 'cleanup', function() {
 	return del( [
 		'release',
-		'user-profile-picture-enhanced'
+		'user-profile-picture-social-networks'
 	] );
 } );
 

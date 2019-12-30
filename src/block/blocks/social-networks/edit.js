@@ -98,7 +98,7 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 		if ( 0 === icons.length ) {
 			return (
 				<li>
-					{__( 'No social networks were found for this user', 'user-profile-picture-enhanced' )}
+					{__( 'No social networks were found for this user', 'user-profile-picture-social-networks' )}
 				</li>
 			);
 		}
@@ -126,18 +126,18 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 		const { align, icons, iconSize, iconTheme, iconColor, iconOrientation, backgroundColor, padding, border, borderColor, borderRadius, bgImg, bgImgFill, bgImgOpacity, bgImgParallax} = this.props.attributes;
 
 		const iconThemeOptions = [
-			{ value: 'brand', label: __( 'Brand Colors', 'user-profile-picture-enhanced' ) },
-			{ value: 'custom', label: __( 'Custom Color', 'user-profile-picture-enhanced' ) },
+			{ value: 'brand', label: __( 'Brand Colors', 'user-profile-picture-social-networks' ) },
+			{ value: 'custom', label: __( 'Custom Color', 'user-profile-picture-social-networks' ) },
 		];
 		const iconOrientationOptions = [
-			{ value: 'horizontal', label: __( 'Horizontal', 'user-profile-picture-enhanced' ) },
-			{ value: 'vertical', label: __( 'Vertical', 'user-profile-picture-enhanced' ) },
+			{ value: 'horizontal', label: __( 'Horizontal', 'user-profile-picture-social-networks' ) },
+			{ value: 'vertical', label: __( 'Vertical', 'user-profile-picture-social-networks' ) },
 		];
 
 		const resetSelect = [
 			{
 				icon: 'update',
-				title: __( 'Refresh Social Networks', 'browser-shots-carousel' ),
+				title: __( 'Refresh Social Networks', 'user-profile-picture-social-networks' ),
 				onClick: ( e ) => {
 					this.setState( {
 						loading: true,
@@ -162,9 +162,9 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 				{!this.state.loading &&
 					<Fragment>
 						<InspectorControls>
-							<PanelBody title={ __( 'Icon Settings', 'user-profile-picture-enhanced' ) }>
+							<PanelBody title={ __( 'Icon Settings', 'user-profile-picture-social-networks' ) }>
 								<SelectControl
-										label={ __( 'Select an Icon Theme', 'user-profile-picture-enhanced' ) }
+										label={ __( 'Select an Icon Theme', 'user-profile-picture-social-networks' ) }
 										value={iconTheme}
 										options={ iconThemeOptions }
 										onChange={ ( value ) => {
@@ -173,19 +173,19 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 								/>
 								{ 'custom' === iconTheme &&
 									<PanelColorSettings
-										title={ __( 'Icon Color', 'user-profile-picture-enhanced' ) }
+										title={ __( 'Icon Color', 'user-profile-picture-social-networks' ) }
 										initialOpen={ true }
 										colorSettings={ [ {
 											value: iconColor,
 											onChange: ( value ) => {
 												setAttributes( { iconColor: value});
 											},
-											label: __( 'Icon Color', 'user-profile-picture-enhanced' ),
+											label: __( 'Icon Color', 'user-profile-picture-social-networks' ),
 										} ] }
 									></PanelColorSettings>
 								}
 								<SelectControl
-										label={ __( 'Select an Icon Orientation', 'user-profile-picture-enhanced' ) }
+										label={ __( 'Select an Icon Orientation', 'user-profile-picture-social-networks' ) }
 										value={ iconOrientation}
 										options={ iconOrientationOptions }
 										onChange={ ( value ) => {
@@ -193,7 +193,7 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 										} }
 								/>
 								<RangeControl
-									label={ __( 'Icon Size', 'user-profile-picture-enhanced' ) }
+									label={ __( 'Icon Size', 'user-profile-picture-social-networks' ) }
 									value={ iconSize }
 									onChange={ ( value ) => this.props.setAttributes( { iconSize: value } ) }
 									min={ 1 }
@@ -201,7 +201,7 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 									step={ 1 }
 								/>
 								<RangeControl
-									label={ __( 'Padding', 'user-profile-picture-enhanced' ) }
+									label={ __( 'Padding', 'user-profile-picture-social-networks' ) }
 									value={ padding }
 									onChange={ ( value ) => this.props.setAttributes( { padding: value } ) }
 									min={ 0 }
@@ -209,7 +209,7 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 									step={ 1 }
 								/>
 								<RangeControl
-									label={ __( 'Border', 'user-profile-picture-enhanced' ) }
+									label={ __( 'Border', 'user-profile-picture-social-networks' ) }
 									value={ border }
 									onChange={ ( value ) => this.props.setAttributes( { border: value } ) }
 									min={ 0 }
@@ -217,7 +217,7 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 									step={ 1 }
 								/>
 								<RangeControl
-									label={ __( 'Border Radius', 'user-profile-picture-enhanced' ) }
+									label={ __( 'Border Radius', 'user-profile-picture-social-networks' ) }
 									value={ borderRadius }
 									onChange={ ( value ) => this.props.setAttributes( { borderRadius: value } ) }
 									min={ 0 }
@@ -225,7 +225,7 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 									step={ 1 }
 								/>
 							</PanelBody>
-							<PanelBody title={ __( 'Background Settings', 'user-profile-picture-enhanced' ) } initialOpen={false}>
+							<PanelBody title={ __( 'Background Settings', 'user-profile-picture-social-networks' ) } initialOpen={false}>
 								<MediaUpload
 									onSelect={ ( imageObject ) => {
 										this.props.setAttributes( { bgImg: imageObject.url } );
@@ -235,18 +235,18 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 									render={ ( { open } ) => (
 										<Fragment>
 											<button className="components-button is-button" onClick={ open }>
-												{ __( 'Background Image!', 'user-profile-picture-enhanced' ) }
+												{ __( 'Background Image!', 'user-profile-picture-social-networks' ) }
 											</button>
 											{ bgImg &&
 												<Fragment>
 													<div>
-														<img src={ bgImg } alt={ __( 'User Profile Picture Background Image', 'user-profile-picture-enhanced' ) } width="250" height="250" />
+														<img src={ bgImg } alt={ __( 'User Profile Picture Background Image', 'user-profile-picture-social-networks' ) } width="250" height="250" />
 													</div>
 													<div>
 														<button className="components-button is-button" onClick={ ( event ) => {
 															this.props.setAttributes( { bgImg: '' } );
 														} }>
-															{ __( 'Remove Image', 'user-profile-picture-enhanced' ) }
+															{ __( 'Remove Image', 'user-profile-picture-social-networks' ) }
 														</button>
 													</div>
 												</Fragment>
@@ -255,33 +255,33 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 									) }
 								/>
 								<ToggleControl
-									label={ __( 'Parallax?', 'user-profile-picture-enhanced' ) }
+									label={ __( 'Parallax?', 'user-profile-picture-social-networks' ) }
 									checked={ bgImgParallax }
 									onChange={ ( value ) => this.props.setAttributes( { bgImgParallax: value } ) }
 								/>
 
 							</PanelBody>
-							<PanelBody title={ __( 'Color Settings', 'user-profile-picture-enhanced' ) } initialOpen={false}>
+							<PanelBody title={ __( 'Color Settings', 'user-profile-picture-social-networks' ) } initialOpen={false}>
 								<PanelColorSettings
-									title={ __( 'Border Color', 'user-profile-picture-enhanced' ) }
+									title={ __( 'Border Color', 'user-profile-picture-social-networks' ) }
 									initialOpen={ true }
 									colorSettings={ [ {
 										value: borderColor,
 										onChange: ( value ) => {
 											setAttributes( { borderColor: value});
 										},
-										label: __( 'Image Border Color', 'user-profile-picture-enhanced' ),
+										label: __( 'Image Border Color', 'user-profile-picture-social-networks' ),
 									} ] }
 								></PanelColorSettings>
 								<PanelColorSettings
-									title={ __( 'Background Color', 'user-profile-picture-enhanced' ) }
+									title={ __( 'Background Color', 'user-profile-picture-social-networks' ) }
 									initialOpen={ true }
 									colorSettings={ [ {
 										value: backgroundColor,
 										onChange: ( value ) => {
 											setAttributes( { backgroundColor: value});
 										},
-										label: __( 'Backgroud Color', 'user-profile-picture-enhanced' ),
+										label: __( 'Backgroud Color', 'user-profile-picture-social-networks' ),
 									} ] }
 								>
 								</PanelColorSettings>

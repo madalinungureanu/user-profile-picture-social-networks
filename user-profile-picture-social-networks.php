@@ -7,7 +7,7 @@
  * @license http://opensource.org/licenses/GPL-2.0 GNU General Public License, version 2 (GPL-2.0)
  *
  * Plugin Name: User Profile Picture Social Networks
- * Plugin URI: https://mediaron.com/downloads/user-profile-picture-social-networks/
+ * Plugin URI: https://mediaron.com/user-profile-picture/social-networks/
  * Description: An add-on for User Profile Picture that allows social networks.
  * Version: 1.0.0
  * Author: MediaRon LLC
@@ -61,7 +61,7 @@ if ( version_compare( phpversion(), '5.4', '<' ) ) {
 /**
  * Get the plugin object.
  *
- * @return \User_Profile_Picture_Enhanced\Plugin
+ * @return \User_Profile_Picture_Social_Networks\Plugin
  */
 function user_profile_picture_social_networks() {
 	static $instance;
