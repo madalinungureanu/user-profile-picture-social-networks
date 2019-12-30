@@ -5,7 +5,7 @@
  * @package   User_Profile_Picture_Enhanced
  */
 
-namespace User_Profile_Picture_Enhanced\Admin;
+namespace User_Profile_Picture_Social_Networks\Admin;
 
 /**
  * Class Admin
@@ -47,7 +47,7 @@ class Social_Networks {
 		}
 		wp_enqueue_style(
 			'user-profile-picture-enhanced-profile',
-			USER_PROFILE_PICTURE_ENHANCED_URL . 'css/user-profile-enhanced-profile-admin.css',
+			USER_PROFILE_PICTURE_ENHANCED_URL . 'css/user-profile-social-networks-profile-admin.css',
 			array(),
 			USER_PROFILE_PICTURE_ENHANCED_VERSION,
 			'all'
@@ -216,16 +216,16 @@ class Social_Networks {
 
 		wp_enqueue_script(
 			'upp-sortable-init',
-			USER_PROFILE_PICTURE_ENHANCED_URL . 'js/sortable-init.js',
+			USER_PROFILE_PICTURE_SOCIAL_NETWORKS_URL . 'js/sortable-init.js',
 			array( 'jquery', 'jquery-ui-sortable' ),
-			USER_PROFILE_PICTURE_ENHANCED_VERSION,
+			USER_PROFILE_PICTURE_SOCIAL_NETWORKS_VERSION,
 			true
 		);
 		wp_enqueue_script(
 			'upp-enhanced-social',
-			USER_PROFILE_PICTURE_ENHANCED_URL . 'js/social-networks.js',
+			USER_PROFILE_PICTURE_SOCIAL_NETWORKS_URL . 'js/social-networks.js',
 			array( 'upp-sortable-init' ),
-			USER_PROFILE_PICTURE_ENHANCED_VERSION,
+			USER_PROFILE_PICTURE_SOCIAL_NETWORKS_VERSION,
 			true
 		);
 		wp_localize_script(
@@ -245,7 +245,7 @@ class Social_Networks {
 				'font-awesome',
 				'https://kit.fontawesome.com/9869399772.js',
 				array(),
-				USER_PROFILE_PICTURE_ENHANCED_VERSION,
+				USER_PROFILE_PICTURE_SOCIAL_NETWORKS_VERSION,
 				true
 			);
 		}
@@ -427,7 +427,7 @@ class Social_Networks {
 		$tablename = $wpdb->prefix . 'upp_social_networks';
 
 		$version = get_option( 'upp_enhanced_table_version', '0' );
-		if ( version_compare( $version, USER_PROFILE_PICTURE_ENHANCED_TABLE_VERSION ) < 0 ) {
+		if ( version_compare( $version, USER_PROFILE_PICTURE_SOCIAL_NETWORKS_TABLE_VERSION ) < 0 ) {
 			$charset_collate = '';
 			if ( ! empty( $wpdb->charset ) ) {
 				$charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
@@ -449,12 +449,12 @@ class Social_Networks {
 			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 			dbDelta( $sql );
 
-			update_option( 'upp_enhanced_table_version', USER_PROFILE_PICTURE_ENHANCED_TABLE_VERSION );
+			update_option( 'upp_enhanced_table_version', USER_PROFILE_PICTURE_SOCIAL_NETWORKS_TABLE_VERSION );
 		}
 	}
 
 	/**
-	 * Drop comments table
+	 * Drop social networks table
 	 *
 	 * @since 1.0.0
 	 * @access public

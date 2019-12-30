@@ -41,26 +41,6 @@ function user_profile_picture_social_networks_php_version_error() {
 }
 
 /**
- * Admin notice if User Profile Picture isn't installed.
- */
-function user_profile_picture_social_networks_dependency_error() {
-	printf(
-		'<div class="error"><p>%s</p></div>',
-		esc_html__( 'User Profile Picture must be installed to use User Profile Picture Social Networks', 'user-profile-picture-social-networks' )
-	);
-}
-
-/**
- * Admin notice if User Profile Picture isn't an adequate version.
- */
-function user_profile_picture_social_networks_upp_version_error() {
-	printf(
-		'<div class="error"><p>%s</p></div>',
-		esc_html__( 'User Profile Picture Enhanced requires User Profile Picture 2.3.2 or above.', 'user-profile-picture-social-networks' )
-	);
-}
-
-/**
  * String describing the minimum PHP version.
  *
  * "Namespace" is a PHP 5.3 introduced feature. This is a hard requirement
@@ -75,16 +55,6 @@ function user_profile_picture_social_networks_php_version_text() {
 // If the PHP version is too low, show warning and return.
 if ( version_compare( phpversion(), '5.4', '<' ) ) {
 	add_action( 'admin_notices', 'user_profile_picture_social_networks_php_version_error' );
-	return;
-}
-
-if ( ! defined( 'METRONET_PROFILE_PICTURE_VERSION' ) ) {
-	add_action( 'admin_notices', 'user_profile_picture_social_networks_dependency_error' );
-	return;
-}
-
-if ( defined( 'METRONET_PROFILE_PICTURE_VERSION' ) && version_compare( METRONET_PROFILE_PICTURE_VERSION, '2.3.2', '<' ) ) {
-	add_action( 'admin_notices', 'user_profile_picture_social_networks_upp_version_error' );
 	return;
 }
 
@@ -117,7 +87,7 @@ user_profile_picture_social_networks()
 /**
  * Sometimes we need to do some things after the plugin is loaded, so call the Plugin_Interface::plugin_loaded().
  */
-add_action( 'plugins_loaded', array( user_profile_picture_social_networks(), 'plugin_loaded' ), 20 );
+add_action( 'user_profile_picture_loaded', array( user_profile_picture_social_networks(), 'plugin_loaded' ), 20 );
 add_action( 'init', 'user_profile_picture_social_networks_add_i18n' );
 
 /**
