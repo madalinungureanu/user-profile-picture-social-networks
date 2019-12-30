@@ -16,12 +16,12 @@ gulp.task( 'bundle', function() {
 		'!tests/**/*',
 		'!phpcs.xml'
 	] )
-		.pipe( gulp.dest( 'release/user-profile-picture-enhanced' ) );
+		.pipe( gulp.dest( 'release/user-profile-picture-social-networks' ) );
 } );
 
 gulp.task( 'remove:bundle', function() {
 	return del( [
-		'release/user-profile-picture-enhanced',
+		'release/user-profile-picture-social-networks',
 	] );
 } );
 
@@ -30,13 +30,13 @@ gulp.task( 'wporg:prepare', function() {
 } );
 
 gulp.task( 'release:copy-for-zip', function() {
-	return gulp.src('release/user-profile-picture-enhanced/**')
+	return gulp.src('release/user-profile-picture-social-networks/**')
 		.pipe(gulp.dest('user-profile-picture-social-networks'));
 } );
 
 gulp.task( 'release:zip', function() {
-	return gulp.src('user-profile-picture-enhanced/**/*', { base: "." })
-	.pipe(zip('user-profile-picture-enhanced.zip'))
+	return gulp.src('user-profile-picture-social-networks/**/*', { base: "." })
+	.pipe(zip('user-profile-picture-social-networks.zip'))
 	.pipe(gulp.dest('.'));
 } );
 
@@ -49,24 +49,24 @@ gulp.task( 'cleanup', function() {
 
 gulp.task( 'clean:bundle', function() {
 	return del( [
-		'release/user-profile-picture-enhanced/bin',
-		'release/user-profile-picture-enhanced/node_modules',
-		'release/user-profile-picture-enhanced/vendor',
-		'release/user-profile-picture-enhanced/tests',
-		'release/user-profile-picture-enhanced/trunk',
-		'release/user-profile-picture-enhanced/gulpfile.js',
-		'release/user-profile-picture-enhanced/Makefile',
-		'release/user-profile-picture-enhanced/package*.json',
-		'release/user-profile-picture-enhanced/phpunit.xml.dist',
-		'release/user-profile-picture-enhanced/README.md',
+		'release/user-profile-picture-social-networks/bin',
+		'release/user-profile-picture-social-networks/node_modules',
+		'release/user-profile-picture-social-networks/vendor',
+		'release/user-profile-picture-social-networks/tests',
+		'release/user-profile-picture-social-networks/trunk',
+		'release/user-profile-picture-social-networks/gulpfile.js',
+		'release/user-profile-picture-social-networks/Makefile',
+		'release/user-profile-picture-social-networks/package*.json',
+		'release/user-profile-picture-social-networks/phpunit.xml.dist',
+		'release/user-profile-picture-social-networks/README.md',
 		'release/user-profile-picture-enhanced/CHANGELOG.md',
-		'release/user-profile-picture-enhanced/webpack.config.js',
-		'release/user-profile-picture-enhanced/.editorconfig',
-		'release/user-profile-picture-enhanced/.eslistignore',
-		'release/user-profile-picture-enhanced/.eslistrcjson',
-		'release/user-profile-picture-enhanced/.git',
-		'release/user-profile-picture-enhanced/.gitignore',
-		'release/user-profile-picture-enhanced/src/block',
+		'release/user-profile-picture-social-networks/webpack.config.js',
+		'release/user-profile-picture-social-networks/.editorconfig',
+		'release/user-profile-picture-social-networks/.eslistignore',
+		'release/user-profile-picture-social-networks/.eslistrcjson',
+		'release/user-profile-picture-social-networks/.git',
+		'release/user-profile-picture-social-networks/.gitignore',
+		'release/user-profile-picture-social-networks/src/block',
 		'package/prepare',
 	] );
 } );
