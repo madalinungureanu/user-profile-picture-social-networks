@@ -1,0 +1,7 @@
+.user-profile-social-networks-social-item .fab,
+.user-profile-social-networks-social-item .fas {
+	width: 24px;
+	height: 24px;
+	cursor: move;
+	font-weight: 900;
+}
