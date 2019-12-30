@@ -62,7 +62,7 @@ class User_Profile_Picture_Enhanced_Social_Networks extends Component {
 
 	getSocialNetworks = () => {
 		const refThis = this;
-		axios.post(upp_enhanced.rest_url + `mpp/v3/get_social_networks/`, { post_id: this.props.post.id, size: this.props.attributes.imageSize }, { 'headers': { 'X-WP-Nonce': upp_enhanced.rest_nonce } } ).then( (response) => {
+		axios.post(upp_social_networks.rest_url + `mpp/v3/get_social_networks/`, { post_id: this.props.post.id, size: this.props.attributes.imageSize }, { 'headers': { 'X-WP-Nonce': upp_social_networks.rest_nonce } } ).then( (response) => {
 			this.setState(
 				{
 					loading: false,

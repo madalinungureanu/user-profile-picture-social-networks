@@ -16,7 +16,7 @@ import edit from './edit';
  *                             registered; otherwise `undefined`.
  */
 registerBlockType( 'mpp/user-profile-picture-enhanced-social-networks', {
-	title: __( 'User Profile Social Networks', 'user-profile-picture-social-networks' ), // Block title.
+	title: __( 'Social Networks', 'user-profile-picture-social-networks' ), // Block title.
 	icon: 'share-alt2',
 	category: 'mpp',
 	keywords: [

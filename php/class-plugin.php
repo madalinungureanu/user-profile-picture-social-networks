@@ -31,5 +31,9 @@ class Plugin extends Plugin_Abstract {
 		// Show social networks Block.
 		$this->social_networks_block = new Blocks\Social_Networks();
 		$this->social_networks_block->register_hooks();
+
+		// Enqueue block assets.
+		$this->block_enqueue = new Blocks\Enqueue();
+		$this->block_enqueue->register_hooks();
 	}
 }
