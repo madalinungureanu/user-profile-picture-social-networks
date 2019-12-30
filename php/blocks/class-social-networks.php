@@ -1,11 +1,11 @@
 <?php
 /**
- * Add options to UPP and its defaults
+ * Add a Social Network block to Gutenberg.
  *
- * @package   User_Profile_Picture_Enhanced
+ * @package   User_Profile_Picture_Social_Networks
  */
 
-namespace User_Profile_Picture_Enhanced\Blocks;
+namespace User_Profile_Picture_Social_Networks\Blocks;
 
 /**
  * Class Admin

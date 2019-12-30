@@ -27,5 +27,9 @@ class Plugin extends Plugin_Abstract {
 		// Load Rest API for Social Networks.
 		$this->rest_get_social_networks = new Rest\Rest_Get_User_Social_Networks();
 		$this->rest_get_social_networks->register_hooks();
+
+		// Show social networks Block.
+		$this->social_networks_block = new Blocks\Social_Networks();
+		$this->social_networks_block->register_hooks();
 	}
 }

@@ -2,7 +2,7 @@
 /**
  * Add Social Networks to User Profile Screen and load associated JS and Ajax calls.
  *
- * @package   User_Profile_Picture_Enhanced
+ * @package   User_Profile_Picture_Social_Networks
  */
 
 namespace User_Profile_Picture_Social_Networks\Admin;
