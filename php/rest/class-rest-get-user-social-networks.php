@@ -2,7 +2,7 @@
 /**
  * Set up the REST API for getting a list of Social Networks.
  *
- * @package   User_Profile_Picture_Enhanced
+ * @package   User_Profile_Picture_Social_Networks
  */
 
 namespace User_Profile_Picture_Social_Networks\Rest;

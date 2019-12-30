@@ -16,10 +16,6 @@ class Plugin extends Plugin_Abstract {
 	 */
 	public function plugin_loaded() {
 
-		// Register license and settings.
-		$this->license_admin = new Admin\EDD_License_Settings();
-		$this->license_admin->register_hooks();
-
 		// Register option defaults.
 		$this->admin_options = new Admin\Options();
 		$this->admin_options->register_hooks();

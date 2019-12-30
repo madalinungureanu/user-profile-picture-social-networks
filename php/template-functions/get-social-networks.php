@@ -2,7 +2,7 @@
 /**
  * Template function for retrieving social media icons for a user.
  *
- * @package   User_Profile_Picture_Enhanced
+ * @package   User_Profile_Picture_Social_Networks
  */
 
 /**
