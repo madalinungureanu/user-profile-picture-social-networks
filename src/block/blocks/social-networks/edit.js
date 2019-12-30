@@ -25,10 +25,6 @@ const {
 	BlockControls,
 	MediaUpload,
 	PanelColorSettings,
-} = wp.editor;
-
-const {
-	RichText
 } = wp.blockEditor;
 
 
