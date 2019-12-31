@@ -241,12 +241,12 @@ class Social_Networks {
 			)
 		);
 		if ( 'on' === $options['font_awesome_admin'] ) {
-			wp_enqueue_script(
-				'font-awesome',
-				'https://kit.fontawesome.com/9869399772.js',
+			wp_enqueue_style(
+				'fontawesome',
+				'https://use.fontawesome.com/releases/v5.0.7/css/all.css',
 				array(),
 				USER_PROFILE_PICTURE_SOCIAL_NETWORKS_VERSION,
-				true
+				'all'
 			);
 		}
 		?>
