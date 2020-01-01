@@ -29,12 +29,6 @@ https://www.youtube.com/watch?v=RETBoLQS_-o
 
 <a href="https://mediaron.com/user-profile-picture/social-networks/">View the documentation</a>.
 
-== Screenshots ==
-
-1. Social Networks on the User Profile Screen
-2. Social Networks on the front-end using the template function
-3. Social Networks Gutenberg block.
-
 == Frequently Asked Questions ==
 
 = Can I add more social networks? =
