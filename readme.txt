@@ -17,6 +17,8 @@ Allow users to add/edit/display their social networks. Requires <a href="https:/
 
 There's also a Gutenberg block and a template tag for outputting your social networks. <a href="https://mediaron.com/user-profile-picture/social-networks/">View the documentation</a>.
 
+https://www.youtube.com/watch?v=RETBoLQS_-o
+
 == Installation ==
 
 1. Requires User Profile Picture 2.3.10 and up.
