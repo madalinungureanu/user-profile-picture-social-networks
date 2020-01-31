@@ -47,9 +47,9 @@ class Social_Networks {
 		}
 		wp_enqueue_style(
 			'user-profile-picture-enhanced-profile',
-			USER_PROFILE_PICTURE_ENHANCED_URL . 'css/user-profile-social-networks-profile-admin.css',
+			USER_PROFILE_PICTURE_SOCIAL_NETWORKS_URL . 'css/user-profile-social-networks-profile-admin.css',
 			array(),
-			USER_PROFILE_PICTURE_ENHANCED_VERSION,
+			USER_PROFILE_PICTURE_SOCIAL_NETWORKS_VERSION,
 			'all'
 		);
 	}
