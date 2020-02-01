@@ -9,7 +9,7 @@
  * Plugin Name: User Profile Picture Social Networks
  * Plugin URI: https://mediaron.com/user-profile-picture/social-networks/
  * Description: An add-on for User Profile Picture that allows social networks.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: MediaRon LLC
  * Author URI: https://mediaron.com
  * License: GPL2
@@ -22,7 +22,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-define( 'USER_PROFILE_PICTURE_SOCIAL_NETWORKS_VERSION', '1.1.1' );
+define( 'USER_PROFILE_PICTURE_SOCIAL_NETWORKS_VERSION', '1.0.1' );
 define( 'USER_PROFILE_PICTURE_SOCIAL_NETWORKS_PLUGIN_NAME', 'User Profile Picture Social Networks' );
 define( 'USER_PROFILE_PICTURE_SOCIAL_NETWORKS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'USER_PROFILE_PICTURE_SOCIAL_NETWORKS_URL', plugins_url( '/', __FILE__ ) );

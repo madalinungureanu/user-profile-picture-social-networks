@@ -3,7 +3,7 @@ Contributors: ronalfy
 Requires at least: 5.0
 Tags: users, user profile, social networks, blocks, block
 Tested up to: 5.3.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -37,11 +37,18 @@ Yes. <a href="https://mediaron.com/user-profile-picture/social-networks/">Check 
 
 == Changelog ==
 
+= 1.0.1 =
+* Released 2020-02-01
+* Fixing undefined constant errors.
+
 = 1.0.0 =
 * Released 2019-12-30
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Fixing undefined constant errors.
 
 = 1.0.0 =
 Initial release.
